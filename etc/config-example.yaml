@@ -1,0 +1,13 @@
+sensors:
+  - name: usb_pa_bme280
+    vid: 0x03eb
+    pid: 0x2310
+    specs:
+      type: on_demand
+      command: GJSON
+      newline: '0a'
+      get_interval: 2
+      sampling_times: 10
+      regexp: '{"T":([+-]?\d+(?:\.\d+)?),"H":([+-]?\d+(?:\.\d+)?),"P":([+-]?\d+(?:\.\d+)?)}'
+      factor: [1.0,1.0,0.01]
+    description: 'DogRatIan USB-PA (BME280) Pressure Sensor'
