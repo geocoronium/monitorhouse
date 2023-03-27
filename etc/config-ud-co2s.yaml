@@ -1,0 +1,14 @@
+sensors:
+  - name: ud_co2s
+    vid: 0x04d8
+    pid: 0xe95a
+    specs:
+      type: autonomous
+      startcommand: STA
+      stopcommand: STP
+      newline: '0d0a'
+      command_result: True
+      sampling_times: 10
+      regexp: 'CO2=([+-]?\d+(?:\.\d+)?),HUM=([+-]?\d+(?:\.\d+)?),TMP=([+-]?\d+(?:\.\d+)?)'
+      factor: [1.0,1.0,1.0]
+    description: 'I-O DATA UD-CO2S High Precision CO2 Sensor'
